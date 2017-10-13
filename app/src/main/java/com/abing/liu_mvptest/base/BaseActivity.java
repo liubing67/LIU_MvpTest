@@ -16,9 +16,11 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V
         return presneter;
     }
 
+    public static Activity instance;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        instance=this;
         if (this.presneter == null){
             //创建P层
             this.presneter = createPresneter();

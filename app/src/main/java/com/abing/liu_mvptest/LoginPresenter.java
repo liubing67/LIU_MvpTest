@@ -1,7 +1,10 @@
 package com.abing.liu_mvptest;
 
 import com.abing.liu_mvptest.base.BasePresenter;
-import com.abing.liu_mvptest.utils.HttpUtils;
+import com.abing.liu_mvptest.utils.http.HttpUtils;
+import com.abing.liu_mvptest.utils.nohttp.HttpListener;
+
+import java.util.Map;
 
 
 //P层
@@ -16,16 +19,17 @@ public class LoginPresenter extends BasePresenter<LoginView> {
         this.loginModel = new LoginModel();
     }
 
-    public void login(String username, String password) {
-        this.loginModel.login(username, password, new HttpUtils.OnHttpResultListener() {
-            @Override
-            public void onResult(String result) {
-                //回调UI层->和UI进行交互
-                if (getView() != null) {
-                    getView().onLoginResult(result);
-                }
-            }
-        });
+    public void login(int what, Map<String,Object> map, String url, HttpListener<String> callback) {
+//        this.loginModel.login(username, password, new HttpUtils.OnHttpResultListener() {
+//            @Override
+//            public void onResult(String result) {
+//                //回调UI层->和UI进行交互
+//                if (getView() != null) {
+//                    getView().onLoginResult(result);
+//                }
+//            }
+//        });
+        this.loginModel.login(what,map,url,callback);
     }
 
 }

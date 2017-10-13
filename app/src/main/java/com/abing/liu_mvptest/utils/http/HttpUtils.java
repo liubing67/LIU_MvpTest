@@ -1,4 +1,4 @@
-package com.abing.liu_mvptest.utils;
+package com.abing.liu_mvptest.utils.http;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -69,7 +69,7 @@ public class HttpUtils {
 		return null;
 	}
 
-	public interface OnHttpResultListener {
-		public void onResult(String result);
-	}
+//	public interface OnHttpResultListener {
+//		public void onResult(String result);
+//	}
 }

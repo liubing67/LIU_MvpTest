@@ -1,4 +1,4 @@
-package com.abing.liu_mvptest.utils;
+package com.abing.liu_mvptest.utils.http;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
